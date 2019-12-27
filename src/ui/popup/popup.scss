@@ -1,0 +1,61 @@
+@import '../../assets/css/base.scss';
+
+.popup {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  z-index: 999;
+}
+
+.popup .popUp-animation {
+  animation-name: showPopup;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+.popup .close-btn {
+  position: absolute;
+  top: 180rpx;
+  right: 24rpx;
+  padding: 32rpx;
+}
+
+.popup .popup-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+}
+
+.popup .popup-container {
+  z-index: 10;
+}
+
+@-webkit-keyframes showPopup {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes showPopup {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
