@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import classnames from 'classnames'
 import './popup.scss'
 
@@ -19,8 +19,7 @@ export default class Popup extends Component {
   handleClose(e) {
     e.stopPropagation()
     this.setState({
-      showPopup: false,
-      show: false
+      showPopup: false
     })
     // 触发组件方法
     this.props.onClose && this.props.onClose()
@@ -37,11 +36,11 @@ export default class Popup extends Component {
     return (
       <block>
         {showPopup && (
-          <View className="popup">
-            <View className="close-btn" onClick={this.handleClose.bind(this)}>
+          <View className='popup'>
+            <View className='close-btn' onClick={this.handleClose.bind(this)}>
               {this.props.closeText}
             </View>
-            <View className="popup-mask" onClick={this.handleClickMask.bind(this)} style={maskStyle}></View>
+            <View className='popup-mask' onClick={this.handleClickMask.bind(this)} style={maskStyle}></View>
             <View className={cls}>{this.props.children}</View>
           </View>
         )}
