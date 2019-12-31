@@ -1,0 +1,58 @@
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+}
+
+.info-wrap {
+  width: 100%;
+  background: #fff;
+  padding: 50rpx 0 80rpx;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: 0;
+}
+
+.info-wrap .title {
+  font-size: 32rpx;
+  margin-bottom: 30rpx;
+  color: #d30;
+  padding: 0 60rpx;
+}
+
+.info-wrap .text {
+  display: block;
+  font-size: 28rpx;
+  color: #333;
+  letter-spacing: 0;
+  line-height: 40rpx;
+  margin: 20rpx auto;
+  width: 630rpx;
+  white-space: pre-wrap;
+}
+
+.close-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+
+.info-wrap .close {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.rule-content {
+  max-height: 700rpx;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}

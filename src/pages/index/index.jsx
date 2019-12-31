@@ -2,17 +2,20 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image, Button } from '@tarojs/components'
 import './index.scss'
 import { Navigation } from '../../components/navigation/navigation'
-import { Popup } from '../../ui/popup/popup'
+import { Menu } from '../../components/menu/menu'
 import { Child } from './sub'
-
 export default class Index extends Component {
   config = {
     navigationBarTitleText: '首页'
   }
   state = {
     name: 'sunnie',
-    show: false,
-    showAnimation: true
+    modalInfo: {
+      showModal: true,
+      modalTxt: '请求失败，请再次点击卡片参与活动哟～',
+      confirmTxt: '我知道了',
+      showConfirm: true
+    }
   }
 
   componentWillMount() {
@@ -37,17 +40,17 @@ export default class Index extends Component {
       show: false
     })
   }
+  confirmModal() {
+    console.log('confirmModal')
+  }
   render() {
-    const { show, showAnimation } = this.state
+    const { modalInfo } = this.state
     return (
-      <View className="index">
+      <View className='index'>
         <View>
           <Navigation></Navigation>
         </View>
-        <Button onClick={this.showPopup.bind(this, show)}>点击</Button>
-        <Popup showAnimation={showAnimation} show={show} onClickMask={this.onPopupClickMask.bind(this)}>
-          popup
-        </Popup>
+        <Menu></Menu>
       </View>
     )
   }
