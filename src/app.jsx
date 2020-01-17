@@ -1,5 +1,8 @@
+import '@tarojs/async-await'
 import Taro, { Component } from '@tarojs/taro'
+import { Provider } from '@tarojs/redux'
 import Index from './pages/index'
+import configStore from './store'
 
 import './app.scss'
 
@@ -37,7 +40,9 @@ class App extends Component {
   // 请勿修改此函数
   render () {
     return (
-      <Index />
+      <Provider store={store}>
+        <Index />
+      </Provider>
     )
   }
 }

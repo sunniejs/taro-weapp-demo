@@ -1,11 +1,27 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Button } from '@tarojs/components'
-
+import { connect } from '@tarojs/redux'
+import  {showDrawer, changeCata,hideDrawer} from  '../../actions/menu';
+@connect(function(store){
+  return  {...store.menu }
+},function(dispatch){
+  console.log(dispatch)
+  return {
+  showMenu(){
+      dispatch(showDrawer())
+  },
+  hideDrawer(){
+      dispatch(hideDrawer())
+  },
+  changeCata(cata){
+      dispatch(changeCata(cata))
+  }
+}
+})
 export default class Menu extends Component {
   config = {
     navigationBarTitleText: ''
   }
-
   state = {}
   render() {
     return (
@@ -17,3 +33,4 @@ export default class Menu extends Component {
     )
   }
 }
+Menu.defaultProps = {}
